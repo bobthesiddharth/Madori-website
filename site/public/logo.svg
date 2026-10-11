@@ -1,0 +1,21 @@
+<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Floor Plan Icon -->
+  <g transform="translate(4, 4)">
+    <!-- Outer boundary -->
+    <rect x="0.5" y="0.5" width="31" height="31" rx="6" fill="#EBF3FA" stroke="#0A4F8F" stroke-width="2"/>
+    <!-- Room dividers (Floor plan layout) -->
+    <path d="M16 1V31" stroke="#0A4F8F" stroke-width="1.8" stroke-dasharray="28" stroke-dashoffset="0"/>
+    <path d="M1 16H20" stroke="#0A4F8F" stroke-width="1.8"/>
+    <!-- Door swing arc / room opening -->
+    <path d="M16 22A6 6 0 0 1 22 28" stroke="#2A9D8F" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Master bed / desk accent -->
+    <rect x="4" y="4" width="7" height="8" rx="2" fill="#2A9D8F" opacity="0.85"/>
+    <rect x="4" y="19" width="8" height="8" rx="2" fill="#0A4F8F" opacity="0.15"/>
+    <rect x="20" y="5" width="8" height="6" rx="1.5" fill="#0A4F8F" opacity="0.2"/>
+  </g>
+  <!-- Brand Wordmark -->
+  <text x="46" y="27" font-family="Inter, -apple-system, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.03em" fill="#0A4F8F">
+    Madori
+  </text>
+  <circle cx="127" cy="18" r="3" fill="#2A9D8F"/>
+</svg>

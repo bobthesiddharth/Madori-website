@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  /* Force light color scheme so OS dark mode does not invert or wash out colors */
+  color-scheme: light;
+
+  /* Brand Design Tokens - High Contrast WCAG AAA */
+  --color-primary: #0A4F8F;
+  --color-primary-hover: #083E70;
+  --color-primary-light: #EBF3FA;
+  
+  --color-secondary: #147A6E;
+  --color-secondary-hover: #0E5E54;
+  --color-secondary-light: #E6F5F3;
+
+  --color-bg: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-heading: #0F172A; /* Deep Slate 900 - Always dark and sharp on light backgrounds */
+  --color-body: #334155;    /* Slate 700 - Highly legible */
+  --color-muted: #64748B;   /* Slate 500 */
+  --color-border: #E2E8F0;
+
+  /* Status Accents */
+  --color-success: #15803D;
+  --color-warning: #B45309;
+  --color-danger: #B91C1C;
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-subtle: 0 2px 8px -2px rgba(10, 79, 143, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 20px 35px -8px rgba(10, 79, 143, 0.16);
+}
+
+body {
+  background-color: #F8FAFC;
+  color: #334155;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure headings on light backgrounds are always deep slate 900 */
+h1, h2, h3, h4, h5, h6 {
+  color: #0F172A !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Navbar */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+/* UIverse-inspired Cool UI Elements */
+/* 1. Shimmer / Gradient Glow Button */
+.uiverse-glow-btn {
+  position: relative;
+  background: linear-gradient(135deg, #0A4F8F 0%, #1A73E8 50%, #2A9D8F 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  box-shadow: 0 4px 15px -3px rgba(10, 79, 143, 0.35);
+  transition: all 0.3s ease;
+}
+
+.uiverse-glow-btn:hover {
+  box-shadow: 0 8px 25px -4px rgba(10, 79, 143, 0.45);
+  transform: translateY(-2px);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. UIverse Glowing Spotlight Card */
+.uiverse-card {
+  position: relative;
+  background: #ffffff !important;
+  border: 1px solid #CBD5E1;
+  border-radius: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.uiverse-card:hover {
+  border-color: rgba(10, 79, 143, 0.5);
+  box-shadow: 0 20px 40px -15px rgba(10, 79, 143, 0.15);
+  transform: translateY(-4px);
+}
+
+/* 3. Subtle Animated Border Glow */
+.uiverse-animated-border {
+  position: relative;
+}
+
+.uiverse-animated-border::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, #0A4F8F, #2A9D8F, #0A4F8F);
+  background-size: 200% 100%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: borderMove 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.uiverse-animated-border:hover::after {
+  opacity: 1;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* 4. Pulse live dot */
+.pulse-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10B981;
+}
+
+.pulse-dot::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background-color: #10B981;
+  animation: pulseRipple 1.8s infinite;
+}
+
+@keyframes pulseRipple {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
